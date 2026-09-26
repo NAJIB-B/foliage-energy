@@ -1,0 +1,9 @@
+const homeEssentials=document.querySelector('.choice[data-value="Home essentials"]');
+const appliancePage=document.querySelector('#appliance-picker');
+appliancePage.classList.add('home-appliance-page');
+appliancePage.insertAdjacentHTML('afterbegin','<div class="appliance-page-top"><span>HOME ESSENTIALS / STEP 1A</span><button type="button" class="appliance-return">← Change solution</button></div>');
+appliancePage.insertAdjacentHTML('beforeend','<button type="button" class="btn btn-sun appliance-continue">Continue to backup <b>→</b></button>');
+homeEssentials.addEventListener('click',()=>{homeEssentials.classList.add('selected');appliancePage.classList.remove('is-hidden');appliancePage.classList.add('show')});
+document.querySelector('.appliance-return').addEventListener('click',()=>appliancePage.classList.remove('show'));
+document.querySelector('.appliance-continue').addEventListener('click',()=>{appliancePage.classList.remove('show');document.querySelector('#next').click()});
+document.head.insertAdjacentHTML('beforeend',`<style>.home-appliance-page{display:none}.home-appliance-page.show{display:block;margin-top:0;border:0;padding-top:0}.home-appliance-page.show~*{display:none}.form-step:has(.home-appliance-page.show)>label,.form-step:has(.home-appliance-page.show)>.choice-grid,#quote-form:has(.home-appliance-page.show)>.form-nav{display:none}.appliance-page-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:20px;font:500 10px 'DM Mono'}.appliance-return{border:0;background:none;color:var(--green);font:700 10px Manrope;cursor:pointer}.home-appliance-page .picker-title{font-size:19px;letter-spacing:-.8px}.home-appliance-page .appliance-continue{margin-top:19px;width:100%;display:flex;justify-content:space-between;align-items:center}.home-appliance-page .iron-warning{margin-top:17px}</style>`);
