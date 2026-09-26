@@ -63,6 +63,44 @@ body {
     margin-right: 40px
 }
 
+.menu-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    padding: 13px 11px;
+    border: 0;
+    background: var(--yellow);
+    color: var(--green);
+    cursor: pointer
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 4px 0;
+    background: currentColor;
+    transition: transform .2s ease, opacity .2s ease
+}
+
+.menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(6px) rotate(45deg)
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0
+}
+
+.menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-6px) rotate(-45deg)
+}
+
+.nav-links a:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px
+}
+
 .nav a:not(.wordmark),
 .footer a {
     font-size: 12px;
@@ -93,6 +131,77 @@ body {
 .btn-dark {
     background: var(--green);
     color: white
+}
+
+@media (max-width: 960px) {
+    .nav-links {
+        display: none;
+        position: fixed;
+        z-index: 20;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        margin: 0;
+        padding: 100px 24px 32px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 0;
+        background: var(--cream);
+        overflow-y: auto
+    }
+
+    .nav-links.is-open {
+        display: flex
+    }
+
+    .nav .nav-links a {
+        width: min(100%, 600px);
+        margin-inline: auto;
+        padding: 18px 8px;
+        border-bottom: 1px solid var(--line);
+        font-size: 20px
+    }
+
+    .nav .nav-links a:hover {
+        background: #dbe7d6
+    }
+
+    .nav .nav-links .mobile-quote-link {
+        margin-top: 24px;
+        padding: 17px 20px;
+        border: 0;
+        background: var(--yellow);
+        font-size: 14px;
+        text-align: center
+    }
+
+    .mobile-quote-link b {
+        margin-left: 12px
+    }
+
+    .nav > [data-open-quote] {
+        display: none
+    }
+
+    .wordmark,
+    .menu-toggle {
+        position: relative;
+        z-index: 21
+    }
+
+    .nav .wordmark {
+        mix-blend-mode: multiply
+    }
+
+    .menu-toggle {
+        display: block
+    }
+}
+
+body.menu-open {
+    overflow: hidden
 }
 
 .hero {
