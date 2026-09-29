@@ -168,16 +168,17 @@ body {
         background: #dbe7d6
     }
 
-    .nav .nav-links .mobile-quote-link {
-        margin-top: 24px;
+    .nav .nav-links .mobile-quote-action {
+        display: block;
+        width: min(100%, 600px);
+        margin: 24px auto 0;
         padding: 17px 20px;
         border: 0;
-        background: var(--yellow);
         font-size: 14px;
         text-align: center
     }
 
-    .mobile-quote-link b {
+    .mobile-quote-action b {
         margin-left: 12px
     }
 
@@ -202,6 +203,10 @@ body {
 
 body.menu-open {
     overflow: hidden
+}
+
+.mobile-quote-action {
+    display: none
 }
 
 .hero {
@@ -703,6 +708,120 @@ h2 em {
 
 .bar-chart i:nth-child(4) {
     height: 145px
+}
+
+@media (max-width: 960px) {
+    .solution-card > span,
+    .solution-card h3,
+    .solution-card p {
+        position: relative;
+        z-index: 1
+    }
+
+    .solution-card h3 {
+        margin-top: 48px;
+        font-size: 23px
+    }
+
+    .solution-card p {
+        max-width: 205px
+    }
+
+    .mini-house {
+        z-index: 0;
+        width: 145px;
+        height: 100px;
+        right: -24px
+    }
+
+    .battery-icon {
+        z-index: 0;
+        right: 22px;
+        bottom: 28px;
+        width: 58px;
+        height: 108px;
+        padding: 9px
+    }
+
+    .battery-icon:before {
+        left: 17px
+    }
+
+    .bar-chart {
+        z-index: 0;
+        right: 20px;
+        height: 98px;
+        gap: 5px
+    }
+
+    .bar-chart i {
+        width: 15px
+    }
+
+    .bar-chart i:nth-child(1) {
+        height: 30px
+    }
+
+    .bar-chart i:nth-child(2) {
+        height: 48px
+    }
+
+    .bar-chart i:nth-child(3) {
+        height: 72px
+    }
+
+    .bar-chart i:nth-child(4) {
+        height: 98px
+    }
+
+    .solution-card a {
+        z-index: 2;
+        left: 17px;
+        bottom: 17px;
+        padding: 8px;
+        background: var(--cream)
+    }
+
+    .home-card a {
+        background: var(--yellow)
+    }
+
+    .battery-card a {
+        background: #d4e3ce
+    }
+
+    .business-card a {
+        background: #edf0e6
+    }
+}
+
+@media (max-width: 1140px) {
+    .mini-house,
+    .battery-icon,
+    .bar-chart {
+        right: 0;
+        bottom: 0;
+        transform: scale(.8);
+        transform-origin: bottom right
+    }
+}
+
+@media (max-width: 750px) {
+    .mini-house,
+    .battery-icon,
+    .bar-chart {
+        transform: scale(1)
+    }
+
+    .battery-icon {
+        right: 30px;
+        bottom: 43px
+    }
+
+    .bar-chart {
+        right: 25px;
+        bottom: 0
+    }
 }
 
 .equipment {
@@ -1255,7 +1374,7 @@ dialog p {
     }
 
     .solution-card {
-        height: 280px
+        height: 320px
     }
 
     .equipment {
@@ -1403,4 +1522,394 @@ dialog p {
 
 .appliance-picker.is-hidden {
     display: none
+}
+
+.about-page .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.about-page .wordmark img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    mix-blend-mode: multiply
+}
+
+.about-page .wordmark span {
+    font-size: 13px;
+    line-height: .82;
+    letter-spacing: -.6px
+}
+
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 7%;
+    min-height: 590px;
+    padding-top: 40px;
+    padding-bottom: 70px
+}
+
+.about-hero h1 {
+    margin: 26px 0;
+    font: 800 clamp(48px, 6.1vw, 82px)/.94 'Archivo Black', sans-serif;
+    letter-spacing: -3px
+}
+
+.about-hero h1 em,
+.about-principles-heading h2 em,
+.community-heading h2 em {
+    color: var(--yellow);
+    font-style: normal
+}
+
+.about-hero-copy>p {
+    max-width: 470px;
+    font-size: 16px;
+    line-height: 1.75
+}
+
+.about-hero-image {
+    position: relative;
+    min-height: 420px;
+    background: #dbe7d6;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 4px
+}
+
+.about-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: contain
+}
+
+.about-hero-image span {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    padding: 8px 10px;
+    background: var(--yellow);
+    font: 500 9px 'DM Mono'
+}
+
+.about-story {
+    padding: 105px 0;
+    background: var(--green);
+    color: var(--cream)
+}
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 8%
+}
+
+.about-story h2,
+.about-principles h2,
+.community-heading h2,
+.about-close h2 {
+    margin: 0 0 30px;
+    font-size: 48px;
+    letter-spacing: -2.5px
+}
+
+.about-story h2 em,
+.about-close h2 em {
+    color: var(--yellow);
+    font-style: normal
+}
+
+.about-story-grid>div>p {
+    max-width: 700px;
+    font-size: 14px;
+    line-height: 1.8
+}
+
+.about-principles {
+    padding-top: 115px;
+    padding-bottom: 120px
+}
+
+.about-principles-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 55px
+}
+
+.about-principles-heading h2 {
+    margin-bottom: 0
+}
+
+.about-principles-heading h2 em {
+    color: var(--green);
+    -webkit-text-stroke: 1px var(--green);
+    text-shadow: 2px 2px 0 var(--yellow)
+}
+
+.principle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px
+}
+
+.principle-grid article {
+    border-top: 2px solid var(--green);
+    padding-top: 18px
+}
+
+.principle-grid article>span {
+    font: 500 10px 'DM Mono'
+}
+
+.principle-grid h3 {
+    margin: 44px 0 10px;
+    font: 800 24px 'Archivo Black'
+}
+
+.principle-grid p {
+    max-width: 300px;
+    font-size: 13px;
+    line-height: 1.7
+}
+
+.community-power {
+    padding: 110px 0;
+    background: var(--green);
+    color: var(--cream)
+}
+
+.community-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 60px
+}
+
+.community-heading h2 {
+    margin: 0
+}
+
+.community-steps article {
+    display: grid;
+    grid-template-columns: 80px 1fr 30px;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    border-top: 1px solid rgba(245, 244, 236, .3)
+}
+
+.community-steps article>span,
+.community-steps article>b {
+    color: var(--yellow);
+    font: 500 13px 'DM Mono'
+}
+
+.community-steps h3 {
+    margin: 0 0 7px;
+    font: 800 23px 'Archivo Black'
+}
+
+.community-steps p {
+    margin: 0;
+    max-width: 590px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6
+}
+
+.about-close {
+    padding-top: 115px;
+    padding-bottom: 125px
+}
+
+.about-close h2 {
+    margin-top: 27px
+}
+
+.about-close>p {
+    max-width: 580px;
+    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 1.75
+}
+
+@media (max-width: 760px) {
+    .about-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 35px;
+        padding-top: 45px;
+        padding-bottom: 65px
+    }
+
+    .about-hero h1 {
+        font-size: 53px;
+        letter-spacing: -2px
+    }
+
+    .about-hero-copy>p {
+        font-size: 14px
+    }
+
+    .about-hero-image {
+        min-height: 300px
+    }
+
+    .about-story,
+    .community-power {
+        padding: 75px 0
+    }
+
+    .about-story-grid {
+        display: block
+    }
+
+    .about-story-grid>div {
+        margin-top: 28px
+    }
+
+    .about-story h2,
+    .about-principles h2,
+    .community-heading h2,
+    .about-close h2 {
+        font-size: 37px;
+        letter-spacing: -2px
+    }
+
+    .about-principles {
+        padding-top: 80px;
+        padding-bottom: 85px
+    }
+
+    .about-principles-heading,
+    .community-heading {
+        display: block;
+        margin-bottom: 42px
+    }
+
+    .about-principles-heading h2,
+    .community-heading h2 {
+        margin-top: 24px
+    }
+
+    .principle-grid {
+        grid-template-columns: 1fr;
+        gap: 28px
+    }
+
+    .principle-grid h3 {
+        margin-top: 25px
+    }
+
+    .community-steps article {
+        grid-template-columns: 34px 1fr 20px;
+        gap: 12px;
+        padding: 20px 0
+    }
+
+    .community-steps h3 {
+        font-size: 19px
+    }
+
+    .about-close {
+        padding-top: 80px;
+        padding-bottom: 90px
+    }
+}
+
+.home-purpose {
+    padding: 90px 0;
+    background: var(--green);
+    color: var(--cream)
+}
+
+.home-purpose-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 8%
+}
+
+.home-purpose-photo {
+    position: relative;
+    min-height: 430px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #dbe7d6
+}
+
+.home-purpose-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.home-purpose-photo span {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    padding: 8px 10px;
+    background: var(--yellow);
+    color: var(--green);
+    font: 500 9px 'DM Mono'
+}
+
+.home-purpose-copy h2 {
+    margin: 22px 0 32px;
+    font-size: 48px;
+    letter-spacing: -2.5px
+}
+
+.home-purpose-copy h2 em {
+    color: var(--yellow);
+    font-style: normal
+}
+
+.home-purpose-copy article {
+    padding: 16px 0 12px;
+    border-top: 1px solid rgba(245, 244, 236, .3)
+}
+
+.home-purpose-copy article span {
+    color: var(--yellow);
+    font: 500 10px 'DM Mono'
+}
+
+.home-purpose-copy article p {
+    margin: 8px 0 0;
+    font: 800 19px 'Archivo Black';
+    line-height: 1.4
+}
+
+@media (max-width: 760px) {
+    .home-purpose {
+        padding: 70px 0
+    }
+
+    .home-purpose-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+    }
+
+    .home-purpose-photo {
+        min-height: 250px
+    }
+
+    .home-purpose-copy h2 {
+        font-size: 37px;
+        letter-spacing: -2px
+    }
 }
