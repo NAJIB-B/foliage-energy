@@ -1,6 +1,7 @@
 (() => {
 const isAboutPage = window.location.pathname.toLowerCase().endsWith('/about.html');
-const homePath = isAboutPage ? 'index.html' : '';
+const isContactPage = window.location.pathname.toLowerCase().endsWith('/contact.html');
+const homePath = isAboutPage || isContactPage ? 'index.html' : '';
 const footer = document.createElement('footer');
 
 footer.className = 'footer';
@@ -17,7 +18,7 @@ footer.innerHTML = `
           <a href="${homePath}#top">Home</a>
           <a href="${homePath}#solutions">Services</a>
           <a href="about.html">About</a>
-          <a href="${homePath}#contact">Contact</a>
+          <a href="contact.html">Contact</a>
         </nav>
       </div>
       <div class="footer-column footer-contact">
