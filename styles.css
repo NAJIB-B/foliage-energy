@@ -540,8 +540,16 @@ h2 em {
 .promise {
     padding: 125px 0 120px;
     display: grid;
-    grid-template-columns: 1fr 2fr 1.5fr;
+    grid-template-columns: 1.3fr .7fr;
     gap: 45px
+}
+
+.promise-copy {
+    align-self: center
+}
+
+.promise-copy h2 {
+    margin: 24px 0
 }
 
 .promise h2,
@@ -595,6 +603,44 @@ h2 em {
     line-height: 1.3;
     display: block;
     margin-top: 8px
+}
+
+.promise-features {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 12px
+}
+
+.promise-features article {
+    min-width: 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--line)
+}
+
+.promise-features article>span {
+    font: 500 10px 'DM Mono';
+    color: #32804e
+}
+
+.promise-features h3 {
+    margin: 25px 0 9px;
+    font: 800 17px/1.2 'Archivo Black'
+}
+
+.promise-features p {
+    max-width: none;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.65
+}
+
+@media (max-width: 960px) {
+    .promise-features {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 28px
+    }
 }
 
 .solutions {
@@ -1509,6 +1555,11 @@ dialog p {
         margin-top: 35px
     }
 
+    .promise-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px
+    }
+
     .section-head p {
         margin-top: 20px
     }
@@ -1593,6 +1644,12 @@ dialog p {
 
     .hero-actions {
         gap: 15px
+    }
+}
+
+@media (max-width: 480px) {
+    .promise-features {
+        grid-template-columns: 1fr
     }
 }
 
