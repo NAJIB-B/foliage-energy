@@ -301,7 +301,7 @@ body.menu-open {
 @media (max-width: 480px) {
 
     .hero-visual img {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         height: auto;
         display: block;
@@ -310,7 +310,7 @@ body.menu-open {
 }
 @media (min-width: 365px) and (max-width: 400px) {
     .hero-visual img {
-        width: 90%
+        width: 100%
     }
 }
 .eyebrow,
