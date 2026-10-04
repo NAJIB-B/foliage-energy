@@ -123,6 +123,30 @@ body {
     line-height: 0
 }
 
+.arrow-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -.16em
+}
+
+.arrow-left {
+    transform: rotate(180deg)
+}
+
+.arrow-up {
+    transform: rotate(-90deg)
+}
+
+.arrow-down {
+    transform: rotate(90deg)
+}
+
 .btn-sun {
     background: var(--yellow);
     color: var(--green)
@@ -246,7 +270,7 @@ body.menu-open {
 
     }
     .hero-visual img {
-        width: 50%;
+        width: 60%;
         margin: 0 auto;
         height: auto;
         display: block;
@@ -256,18 +280,25 @@ body.menu-open {
         max-width: 640px;
     }
 
+    .hero .hero-brand-seal {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 20px;
+    }
+
 }
 @media (max-width: 624px) {
 
     .hero-visual img {
-        width: 60%;
+        width: 70%;
         margin: 0 auto;
         height: auto;
         display: block;
     }
 
 }
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
     .hero-visual img {
         width: 80%;
@@ -279,7 +310,7 @@ body.menu-open {
 }
 @media (min-width: 365px) and (max-width: 400px) {
     .hero-visual img {
-        width: 72%
+        width: 90%
     }
 }
 .eyebrow,
@@ -1219,6 +1250,9 @@ h2 em {
 }
 
 .back {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     border: 0;
     background: none;
     color: var(--green);

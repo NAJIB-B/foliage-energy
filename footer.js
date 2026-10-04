@@ -31,7 +31,7 @@ footer.innerHTML = `
         <a class="footer-social" href="https://www.instagram.com/foliage_enerygy/" aria-label="Instagram: @foliage_enerygy" target="_blank" rel="noopener noreferrer"><svg class="footer-icon footer-social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a>
       </div>
     </div>
-    <div class="footer-bottom"><small>© ${new Date().getFullYear()} Foliage Energy Solutions</small><a href="${homePath}#top">Back to top ↑</a></div>
+    <div class="footer-bottom"><small>© ${new Date().getFullYear()} Foliage Energy Solutions</small><a href="${homePath}#top">Back to top <svg class="arrow-icon arrow-up" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10m0 0-5-5m5 5-5 5"/></svg></a></div>
   </div>`;
 
 const footerMount = document.querySelector('#site-footer');

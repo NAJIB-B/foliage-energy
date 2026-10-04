@@ -1,8 +1,8 @@
 const homeEssentials=document.querySelector('.choice[data-value="Home essentials"]');
 const appliancePage=document.querySelector('#appliance-picker');
 appliancePage.classList.add('home-appliance-page');
-appliancePage.insertAdjacentHTML('afterbegin','<div class="appliance-page-top"><span>HOME ESSENTIALS / STEP 1A</span><button type="button" class="appliance-return">← Change solution</button></div>');
-appliancePage.insertAdjacentHTML('beforeend','<button type="button" class="btn btn-sun appliance-continue">Continue to backup <b>→</b></button>');
+appliancePage.insertAdjacentHTML('afterbegin','<div class="appliance-page-top"><span>HOME ESSENTIALS / STEP 1A</span><button type="button" class="appliance-return"><svg class="arrow-icon arrow-left" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10m0 0-5-5m5 5-5 5"/></svg> Change solution</button></div>');
+appliancePage.insertAdjacentHTML('beforeend','<button type="button" class="btn btn-sun appliance-continue">Continue to backup <b><svg class="arrow-icon arrow-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10m0 0-5-5m5 5-5 5"/></svg></b></button>');
 homeEssentials.addEventListener('click',()=>{homeEssentials.classList.add('selected');appliancePage.classList.remove('is-hidden');appliancePage.classList.add('show')});
 document.querySelector('.appliance-return').addEventListener('click',()=>appliancePage.classList.remove('show'));
 document.querySelector('.appliance-continue').addEventListener('click',()=>{appliancePage.classList.remove('show');document.querySelector('#next').click()});

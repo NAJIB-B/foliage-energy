@@ -4,7 +4,7 @@ const isAboutPage = window.location.pathname.toLowerCase().endsWith('/about.html
 const sectionPath = isAboutPage ? 'index.html#' : '#';
 
 navLinks.id = 'site-navigation';
-navLinks.innerHTML = `<a href="${sectionPath}top">Home</a><a href="${sectionPath}solutions">Services</a><a href="about.html"${isAboutPage ? ' aria-current="page"' : ''}>About</a><a href="${sectionPath}contact">Contact</a><button class="btn btn-sun mobile-quote-action" type="button" data-open-quote>Get a quote <b>↗</b></button>`;
+navLinks.innerHTML = `<a href="${sectionPath}top">Home</a><a href="${sectionPath}solutions">Services</a><a href="about.html"${isAboutPage ? ' aria-current="page"' : ''}>About</a><a href="${sectionPath}contact">Contact</a><button class="btn btn-sun mobile-quote-action" type="button" data-open-quote>Get a quote <b><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></b></button>`;
 
 const closeNavigation = () => {
     navLinks.classList.remove('is-open');
